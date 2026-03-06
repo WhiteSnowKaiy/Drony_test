@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="CENTER" minHeight="6000.0" minWidth="800.0" spacing="10.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kaiy.dronekits_fx.DroneController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="10.0" />
+    </padding>
+   <ToolBar prefHeight="40.0" prefWidth="200.0">
+     <items>
+       <Button mnemonicParsing="false" text="Button" />
+     </items>
+   </ToolBar>
+
+    <Label fx:id="welcomeText" />
+   <VBox prefHeight="220.0" prefWidth="200.0">
+      <children>
+         <SplitPane dividerPositions="0.398989898989899" minHeight="30.0" prefHeight="30.0" prefWidth="200.0">
+           <items>
+             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                  <children>
+                     <Label layoutX="7.0" layoutY="-1.0" minHeight="30.0" minWidth="48.0" prefHeight="30.0" prefWidth="76.0" text="Aluminum" />
+                  </children>
+               </AnchorPane>
+             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="30.0" prefWidth="200.0">
+                  <children>
+                     <Label fx:id="aluminumCount" layoutX="42.0" layoutY="5.0" text="Label" />
+                  </children>
+               </AnchorPane>
+           </items>
+         </SplitPane>
+         <SplitPane dividerPositions="0.398989898989899" minHeight="30.0" prefHeight="30.0" prefWidth="200.0">
+           <items>
+             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                  <children>
+                     <Label layoutX="6.0" layoutY="-1.0" minHeight="30.0" minWidth="50.0" text="Plastic" />
+                  </children>
+               </AnchorPane>
+             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                  <children>
+                     <Label fx:id="plasticCount" layoutX="42.0" layoutY="5.0" text="Label" />
+                  </children>
+               </AnchorPane>
+           </items>
+         </SplitPane>
+         <SplitPane dividerPositions="0.398989898989899" minHeight="30.0" prefHeight="30.0" prefWidth="200.0">
+           <items>
+             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                  <children>
+                     <Label layoutX="6.0" layoutY="-1.0" minHeight="30.0" minWidth="50.0" text="Chips" />
+                  </children>
+               </AnchorPane>
+             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                  <children>
+                     <Label fx:id="chipsCount" layoutX="42.0" layoutY="5.0" text="Label" />
+                  </children>
+               </AnchorPane>
+           </items>
+         </SplitPane>
+         <SplitPane dividerPositions="0.398989898989899" minHeight="30.0" prefHeight="30.0" prefWidth="200.0">
+           <items>
+             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                  <children>
+                     <Label layoutX="5.0" layoutY="5.0" text="Frames" />
+                  </children>
+               </AnchorPane>
+             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="28.0" prefWidth="129.0">
+                  <children>
+                     <Label fx:id="framesCount" layoutX="42.0" layoutY="5.0" text="Label" />
+                  </children>
+               </AnchorPane>
+           </items>
+         </SplitPane>
+         <SplitPane dividerPositions="0.398989898989899" minHeight="30.0" prefHeight="30.0" prefWidth="200.0">
+           <items>
+             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                  <children>
+                     <Label layoutX="5.0" layoutY="5.0" text="Blades" />
+                  </children>
+               </AnchorPane>
+             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                  <children>
+                     <Label fx:id="bladesCount" layoutX="42.0" layoutY="5.0" text="Label" />
+                  </children>
+               </AnchorPane>
+           </items>
+         </SplitPane>
+         <SplitPane dividerPositions="0.398989898989899" minHeight="30.0" prefHeight="30.0" prefWidth="200.0">
+           <items>
+             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                  <children>
+                     <Label layoutX="5.0" layoutY="5.0" text="PCBs" />
+                  </children>
+               </AnchorPane>
+             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                  <children>
+                     <Label fx:id="pcbCount" layoutX="42.0" layoutY="5.0" text="Label" />
+                  </children>
+               </AnchorPane>
+           </items>
+         </SplitPane>
+         <SplitPane dividerPositions="0.398989898989899" minHeight="30.0" prefHeight="30.0" prefWidth="200.0">
+           <items>
+             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                  <children>
+                     <Label layoutX="5.0" layoutY="5.0" text="Kits" />
+                  </children>
+               </AnchorPane>
+             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                  <children>
+                     <Label fx:id="kitsCount" layoutX="42.0" layoutY="5.0" text="Label" />
+                  </children>
+               </AnchorPane>
+           </items>
+         </SplitPane>
+      </children>
+   </VBox>
+   <HBox prefHeight="100.0" prefWidth="633.0">
+      <children>
+          <Button onAction="#onStart" text="Start" />
+         <Button mnemonicParsing="false" onAction="#onStop" text="Stop" />
+      </children>
+   </HBox>
+</VBox>
