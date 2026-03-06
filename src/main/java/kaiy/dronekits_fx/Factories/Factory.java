@@ -5,6 +5,8 @@ import static java.lang.Thread.sleep;
 public abstract class Factory {
     protected String name;
     protected boolean unlocked = true;
+    protected int kitsGoal;
+    protected int componentsMade;
 
     protected void printState(String state) {
         System.out.println("["+name+"] " + state);

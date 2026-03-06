@@ -1,6 +1,7 @@
 module kaiy.dronekits_fx {
     requires javafx.controls;
     requires javafx.fxml;
+    requires jdk.security.jgss;
 
 
     opens kaiy.dronekits_fx to javafx.fxml;

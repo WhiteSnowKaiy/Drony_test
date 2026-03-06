@@ -13,8 +13,14 @@ public class DroneBuilder extends Factory implements Runnable{
     public void run() {
         System.out.println("Builder " + name + " has started working on new drones!");
         while (unlocked){
+            if (warehouse.getKits() >= kitsGoal){
+                System.out.println("[" + name + "] Finished working on new drones!");
+                System.out.println("[" + name + "] Total kits made: " + componentsMade);
+                return;
+            }
             try {
                 makeDrone();
+                componentsMade++;
                 sleep(1000);
             } catch (InterruptedException e) {
                 System.out.println("[" + name + "] Thread stopped!");
@@ -27,17 +33,15 @@ public class DroneBuilder extends Factory implements Runnable{
             warehouse.removeFrames(1);
             warehouse.removeBlades(1);
             warehouse.removePCB(1);
-
-            sleep(1000);
         } catch (NotEnoughMaterial e) {
             printState(e.getMessage());
-            sleep(1000);
             return;
         }
         warehouse.addKit(1);
     }
 
-    public DroneBuilder(String name) {
+    public DroneBuilder(String name, int goal) {
         this.name = name;
+        this.kitsGoal = goal;
     }
 }

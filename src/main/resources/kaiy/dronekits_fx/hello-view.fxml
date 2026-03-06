@@ -119,7 +119,16 @@
    </VBox>
    <HBox prefHeight="100.0" prefWidth="633.0">
       <children>
-          <Button onAction="#onStart" text="Start" />
+         <VBox prefHeight="100.0" prefWidth="176.0">
+            <children>
+                <Button onAction="#onStart" text="Start">
+                  <padding>
+                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                  </padding>
+               </Button>
+               <TextField fx:id="kitsGoal" />
+            </children>
+         </VBox>
          <Button mnemonicParsing="false" onAction="#onStop" text="Stop" />
       </children>
    </HBox>

@@ -41,7 +41,7 @@ public class Warehouse {
         }
     }
 
-    synchronized void addChips(int amount){
+    public synchronized void addChips(int amount){
         this.chips += amount;
     }
     public synchronized void removeChips(int amount){

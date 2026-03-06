@@ -12,8 +12,14 @@ public class BladeFactory extends Factory implements Runnable {
     public void run() {
         System.out.println("Factory " + name + " has started producing");
         while (unlocked){
+            if (warehouse.getKits() >= kitsGoal){
+                System.out.println("[" + name + "] Stopping production!");
+                System.out.println("[" + name + "] Total blades made: " + componentsMade);
+                return;
+            }
             try {
                 makeBlade();
+                componentsMade++;
                 sleep(1000);
             } catch (InterruptedException e) {
                 System.out.println("[" + name + "] Thread stopped!");
@@ -26,13 +32,13 @@ public class BladeFactory extends Factory implements Runnable {
             warehouse.removePlastic(30);
         } catch (NotEnoughMaterial e) {
             printState(e.getMessage());
-            sleep(1000);
             return;
         }
         warehouse.addBlades(1);
     }
 
-    public BladeFactory(String name) {
+    public BladeFactory(String name, int kitsGoal) {
         this.name = name;
+        this.kitsGoal = kitsGoal;
     }
 }
