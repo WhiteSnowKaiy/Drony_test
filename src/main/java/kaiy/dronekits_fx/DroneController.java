@@ -48,13 +48,6 @@ public class DroneController {
     private Thread builderThread2;
     private DroneBuilder builder2;
 
-    boolean isBladeThreadInterrupted = false;
-    boolean isPcbThreadInterrupted = false;
-    boolean isFrameThreadInterrupted = false;
-
-    boolean isBuilder2Interrupted = false;
-    boolean isBuilder1Interrupted = false;
-
     @FXML
     protected void onStart() {
         if (kitsGoal.getCharacters().toString().isEmpty()) {
@@ -96,25 +89,7 @@ public class DroneController {
 
     @FXML
     protected void onStop(){
-        try {
-            while (!isFrameThreadInterrupted){
-                isFrameThreadInterrupted = isFrameThreadInterrupted();
-            }
-            while (!isPcbThreadInterrupted){
-                isPcbThreadInterrupted = isPcbThreadInterrupted();
-            }
-            while (!isBladeThreadInterrupted){
-                isBladeThreadInterrupted = isBladeThreadInterrupted();
-            }
-            while (!isBuilder2Interrupted){
-                isBuilder2Interrupted = isBuilder2Interrupted();
-            }
-            while (!isBuilder1Interrupted){
-                isBuilder1Interrupted = isBuilder1Interrupted();
-            }
-        } catch (InterruptedException e) {
-            System.out.println("Exception");
-        }
+        // Todo: Fix this...
     }
 
     void updater(){
@@ -131,40 +106,5 @@ public class DroneController {
         );
         timeline.setCycleCount(Animation.INDEFINITE);
         timeline.play();
-    }
-
-    boolean isPcbThreadInterrupted() throws InterruptedException {
-        PCB.sleepThread();
-        pcbThread.interrupt();
-
-        return pcbThread.isInterrupted();
-    }
-
-    boolean isBladeThreadInterrupted() throws InterruptedException {
-        blades.sleepThread();
-        bladeThread.interrupt();
-
-        return bladeThread.isInterrupted();
-    }
-
-    boolean isFrameThreadInterrupted() throws InterruptedException {
-        frames.sleepThread();
-        frameThread.interrupt();
-
-        return frameThread.isInterrupted();
-    }
-
-    boolean isBuilder1Interrupted() throws InterruptedException {
-        builder1.sleepThread();
-        builderThread1.interrupt();
-
-        return builderThread1.isInterrupted();
-    }
-
-    boolean isBuilder2Interrupted() throws InterruptedException {
-        builder2.sleepThread();
-        builderThread2.interrupt();
-
-        return builderThread2.isInterrupted();
     }
 }
